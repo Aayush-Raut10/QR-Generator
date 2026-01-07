@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR-Code Generator</title>
+    <style>
+          *{
+            margin:0px;
+            padding:0px;
+            box-sizing: border-box;
+        }
+        .container{
+            margin:50px auto ;
+            border:1px solid #ddd;
+            width:800px;
+            height:600px;
+            padding:40px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+           
+        }
+
+         h1{
+           margin-bottom: 20px;
+           color:#333;
+        }
+
+        .btn-download{
+           
+           
+            margin-top: 15px;
+            padding:10px;
+            border-radius: 6px;
+            background-color: #0077ff;
+            text-align: center;
+            font-size:24px;
+
+        }
+
+        a{
+            text-decoration: none;
+             color:white;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="container">
+        <h1>{{name }}</h1>
+
+        <img src="{{ qrurl }}" alt="qrcode" style="border: 1px solid black">
+
+        <div class="btn-download">
+            <a href="{{ qrurl }}" download="{{ filename }}">Download</a>
+        </div>
+       
+    </div>
+</body>
+</html>
