@@ -4,9 +4,11 @@ import qrcode
 import datetime
 import os
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+@login_required
 def index(request):
     if request.method == "POST":
         

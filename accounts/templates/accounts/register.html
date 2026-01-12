@@ -96,20 +96,27 @@
 
         <h1>Registration</h1>
 
-        <div class="error-div">
-            <!-- <p>Username or password are incorrect!</p> -->
-        </div>
+        {% if errors %}
+          {% for error in errors %}
+            <div class="error-div">
+            <p>{{ error }}</p>
+            </div>
+          {% endfor %}
+        {% endif %}
+        
 
         <form action="" method="POST">
 
+            {% csrf_token %}
+
             <div class="input-group">
                 <label for="fullname">Full Name</label>
-                <input type="text" name="fullname" placeholder="Enter full name" required>
+                <input type="text" name="fullname" placeholder="Enter full name" value="{{ form_data.fullname | default:''}}" required>
             </div>
 
             <div class="input-group">
                 <label for="username">Username</label>
-                <input type="text" name="username" placeholder="Enter username" required>
+                <input type="text" name="username" placeholder="Enter username" value="{{ form_data.username | default:''}}" required>
             </div>
            
             <div class="input-group">

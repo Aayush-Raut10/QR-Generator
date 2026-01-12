@@ -74,7 +74,7 @@
     <div class="container">
         <h1>LinkedIn Profile QR Generator</h1>
 
-       <form action="{% url 'index' %}" method="POST">
+       <form action="{% url 'Generator:index' %}" method="POST">
             {% csrf_token %} 
             <div class="field">
                 <label for="name">Enter Profile Name: </label>
